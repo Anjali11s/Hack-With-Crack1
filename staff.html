@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://t3.ftcdn.net/jpg/05/16/28/30/240_F_516283025_JhI6UdCpbYY5lrUPs5cY9ZcitBRP1NEl.jpg');
+            background-size:contain;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        /* Heading Styles */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        /* Form Styles */
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004080;
+        }
+
+        /* Confirmation Message Styles */
+        .confirmation-message {
+            text-align: center;
+            color: #009900;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Appointment</h1>
+        <form id="appointment-form" onsubmit="showConfirmation()">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="registration_number">Registration Number</label>
+            <input type="number" id="registration_number" name="registration_number" required>
+
+            <label for="department">Select Faculty</label>
+            <select id="department" name="Faculty" required>
+                <option value="">Select Faculty</option>
+                <option value="Dean">Dean</option>
+                <option value="HOD">HOD</option>
+                <option value="Mentor">Mentor</option>
+                <option value="HOS">HOS</option>
+            </select>
+
+            <label for="time">Select Time Slot</label>
+            <select id="time" name="time" required>
+                <option value="">Select Time Slot</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+            </select>
+
+            <input type="submit" value="Book Appointment">
+        </form>
+
+        <div class="confirmation-message" id="confirmation-message" style="display: none;">
+            Appointment booked successfully!
+        </div>
+    </div>
+
+    <script>
+        function showConfirmation() {
+            event.preventDefault();
+            document.getElementById("confirmation-message").style.display = "block";
+        }
+    </script>
+</body>
+</html>
