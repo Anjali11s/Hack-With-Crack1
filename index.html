@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +12,12 @@
             background-size: cover;
         }
 
-        /* .header {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-        } */
+        }
 
         .university-logo {
             width: 300px;
@@ -67,8 +66,8 @@
             background-color: rgba(246, 245, 249, 0.7);
         }
 
-        #password , #registration_number {
-            width: 93%;
+        #password {
+            width: 100%;
         }
 
         .button-container {
@@ -114,7 +113,7 @@
         }
 
         .login-box {
-            width: 400px;
+            width: 90%; /* Adjusted width for responsiveness */
             margin: 0 auto;
             padding: 20px;
             border-radius: 5px;
@@ -131,6 +130,19 @@
             color: rgb(244, 236, 233);
             transition: 0.5s;
         }
+
+        /* Media Queries for Responsive Design */
+        @media screen and (min-width: 768px) { /* Adjust as needed */
+            .login-box {
+                width: 400px;
+            }
+        }
+
+        @media screen and (max-width: 768px) { /* Adjust as needed */
+            .login-container {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,7 +151,7 @@
             <h2 id="heading">University Management System</h2>
         </div>
         <div class="login-container">
-            <form method="post" id = "login">
+            <form method="post">
                 <div class="form-group">
                     <label for="office">Office:</label>
                     <select name="office" id="office">
@@ -150,17 +162,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="destination">Destination:</label>
+                    <label for="destination">Registration:</label>
                     <select name="destination" id="destination">
                         <option value="dashboard">Dashboard</option>
                         <option value="homepage">Home Page</option>
                         <option value="assignmentupload">Assignment Upload</option>
                         <option value="timetable">Timetable</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for = "registration_number">Registration Number</label>
-                    <input type ="number" name = 'registration_number' id = "registration_number" required>
                 </div>
 
                 <div class="form-group">
@@ -169,18 +177,14 @@
                 </div>
 
                 <div class="button-container">
-                    <button onclick="window.location.href='home.html';" type="submit">Log In</button>
-                    <!-- <button type = "submit">Log In</button> -->
+                    <button onclick="window.location.href='home.html';" type="button">Log In</button>
                 </div>
                 
             </form>
         </div>
         <div class="bottom-links">
-            
             <a href="staff.html">Staff Mail</a>
         </div>
     </div>
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-    <script src = "./login.js"></script> -->
 </body>
 </html>
